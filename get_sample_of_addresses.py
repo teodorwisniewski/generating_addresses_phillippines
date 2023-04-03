@@ -56,7 +56,7 @@ if __name__ == "__main__":
     # Set the location for the geolocator
     geolocator = Nominatim(user_agent="Phillippines_address_generator")
 
-    # Define the boundaries of the Manila city
+    # Define the boundaries of a target area
     city_name = "Kuala_Lumpur_Malaysia"
     min_lat = 2.9
     max_lat = 3.2
@@ -69,4 +69,4 @@ if __name__ == "__main__":
         addresses, columns=["Address", "Latitude", "Longitude"]
     ).drop_duplicates(subset=["Address"], keep="first")
 
-    new_df.to_csv(f"addresses_Philippines_{city_name}.csv")
+    new_df.to_csv(f"addresses_{city_name}.csv")
